@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Files</title>
+<link rel="stylesheet" href="css/style_files.css" media="screen" type="text/css" />
+</head>
+<body>
+	<div class="out">
+		<div id="header">
+			<input type="button" id="addFolderButton" value="Create folder" /> 
+			<input type="button" id="logout" value="Logout" />
+			<input type="button" id="uploadFile" value="Upload file" />
+			 <input type="file" id="inputFile" name="files[]" multiple hidden />
+		</div>
+	</div>
+	<div class="fileItem" id="fullPath"></div>
+	<ul id="list" class="fileItem"></ul>
+	<div class="footer"></div>
+	<script src="https://code.jquery.com/jquery-1.12.0.js"></script>
+	<script src="js/file.js"></script>
+	<script src="js/jquery.ui.widget.js"></script>
+  	<script src="js/jquery.iframe-transport.js"></script>
+  	<script src="js/jquery.fileupload.js"></script>
+	 <script>
+    // When the server is ready...
+      $(function () {
+        'use strict';
+        
+        // Define the url to send the image data to
+        var url = 'http://localhost:8080/Auth/json/FileUploaderServlet';
+        
+        // Call the fileupload widget and set some parameters
+        $('#inputFile').fileupload({
+            url: url,
+            dataType: 'json',
+            done: document.getElementById("fullPath").value = "Done"
+        });
+    });
+    
+  </script>
+</body>
+</html>

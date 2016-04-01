@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>ServletFilterExample</display-name>
+   <filter>
+    <filter-name>AuthenticationFilter</filter-name>
+    <filter-class>com.insart.servlets.json.AuthenticationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthenticationFilter</filter-name>
+    <servlet-name>GrabFilesServlet</servlet-name>
+  </filter-mapping>
+ <servlet>
+    <servlet-name>AddUserServletJson</servlet-name>
+    <servlet-class>com.insart.servlets.json.AddUserServletJson</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AuthServletJson</servlet-name>
+    <servlet-class>com.insart.servlets.json.AuthServletJson</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GrabFilesServlet</servlet-name>
+    <servlet-class>com.insart.servlets.json.GrabFilesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.insart.servlets.json.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddUserServletJson</servlet-name>
+    <url-pattern>json/AddUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AuthServletJson</servlet-name>
+    <url-pattern>json/AuthServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GrabFilesServlet</servlet-name>
+    <url-pattern>json/GrabFilesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>json/LogoutServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
